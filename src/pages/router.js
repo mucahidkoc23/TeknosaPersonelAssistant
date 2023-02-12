@@ -17,8 +17,10 @@ const Drawer = createDrawerNavigator();
 const Tabs=()=> {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Weather" component={weather} options={{headerShown:false}}/>
-      <Tab.Screen name="Notes" component={note} options={{headerShown:false}} />
+      <Tab.Screen name="Weather" 
+        component={weather} 
+        options={{headerShown:false}}/>
+    <Tab.Screen name="Notes" component={note} options={{headerShown:false}} />
     </Tab.Navigator>
   );
 }

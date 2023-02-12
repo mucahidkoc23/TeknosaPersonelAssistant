@@ -1,17 +1,40 @@
-import React from "react";
-import {View,TextInput,TouchableOpacity,Button,StyleSheet} from "react-native";
+import React,{useState} from "react";
+import {Image,View,TextInput,TouchableOpacity,Button,StyleSheet,Text} from "react-native";
 
 const loginScreen = ({navigation}) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const handleLogin = () => {
+    if (username === 'a' && password === 'a') {
+      navigation.navigate('Profile');
+    } else {
+      alert('Incorrect username or password');
+    }
+  };
  return(
 <View style={styles.container}>
+  <Image 
+    source={{uri:'https://www.pngkey.com/png/detail/425-4259263_personal-assistant-logo.png'}}
+    style={styles.ImagesStyle}/>
   <View style={styles.textInputView}>
-    <TextInput style={styles.textInput} placeholder="User Name" />
-    <TextInput style={styles.textInput} placeholder="Password"  secureTextEntry={true}/>
-            
+    <TextInput 
+     style={styles.textInput} 
+     placeholder="User Name" 
+     value={username}
+     onChangeText={setUsername}
+    />
+    <TextInput 
+     style={styles.textInput} 
+     placeholder="Password"  
+     secureTextEntry={true}
+     value={password}
+     onChangeText={setPassword}/>
+     
     <TouchableOpacity style={styles.buttonStyle}>
      <Button color={"#00008b"} 
-     title="Giriş" 
-     onPress={()=>navigation.navigate('Profile')}/> 
+     title="Login" 
+     onPress={handleLogin}/> 
     </TouchableOpacity>
   </View>           
 </View>
@@ -20,8 +43,7 @@ const loginScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({  
   container: { 
-    flex: 1,   
-    justifyContent:"center",
+    flex: 1, 
     backgroundColor:'#1e90ff',  
   }, 
   buttonStyle:{   
@@ -41,6 +63,15 @@ const styles = StyleSheet.create({  
   textInputView:{
     justifyContent: 'space-around',   
     alignItems: 'center',   
+  },
+  ImagesStyle:{
+    height:100,
+    width:200,
+    justifyContent:"center",
+    margin:50,
+    marginBottom:80,
+    borderRadius:7,
+    alignSelf:"center",  
   },
 });
 export default loginScreen;
