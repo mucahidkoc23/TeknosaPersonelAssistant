@@ -34,7 +34,7 @@ const note = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor:'#1e90ff',  
     padding: 20,
   },
   input: {
@@ -43,9 +43,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   btn: {
+    width:50,
     backgroundColor: '#333',
     padding: 10,
     alignItems: 'center',
+    borderRadius:7,
+    marginBottom:10,
+   
   },
   btnText: {
     color: '#fff',

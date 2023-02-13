@@ -1,10 +1,10 @@
 import React from "react";
-import {StyleSheet,View,Text,Button} from "react-native";
+import {StyleSheet,View,Text,} from "react-native";
 
 const settings=()=>{
   return(
     <View style={styles.container}>
-      <Text>UserName:</Text>
+      <Text>welcome:{username}</Text>
     </View>
   );
 };
